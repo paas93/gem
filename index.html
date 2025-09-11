@@ -94,7 +94,8 @@
     <strong>17P 활성화 전</strong> → <span class="영웅">의지력 8 or 9</span> 짜리 등급 무관 모두 가공<br>
     <strong>17P 완성 후 전투력 상승</strong> → 
     <strong>질서 : 안정(</strong><span class="희귀">희귀</span>, <span class="영웅">영웅</span><strong>) / 
-    혼돈 : 침식(</strong><span class="고급">고급</span>, <span class="희귀">희귀</span>, <span class="영웅">영웅</span><strong>), 왜곡(</strong><span class="희귀">희귀</span><strong>)</strong> 가공<br><span class="영웅">거래 가능 젬은 가격 확인후 쌀</span>
+    혼돈 : 침식(</strong><span class="고급">고급</span>, <span class="희귀">희귀</span>, <span class="영웅">영웅</span><strong>), 왜곡(</strong><span class="희귀">희귀</span><strong>)</strong> 가공<br>
+    <span class="영웅">거래 가능 젬은 가격 확인후 쌀</span> / <span class="고급">고급 왜곡, 고급 붕괴</span>는 일단 킵
   </p>
 </div>
 
@@ -102,31 +103,20 @@
     <div class="grade-block">
 <h3>🟢 고급 젬 (보유 개수 입력)</h3>
       <div class="gem-group">
+        <label><span class="고급">고급 안정</span><input type="number" id="고급 안정"></label>
         <label><span class="고급">고급 견고</span><input type="number" id="고급 견고"></label>
         <label><span class="고급">고급 불변</span><input type="number" id="고급 불변"></label>
-        <label><span class="고급">고급 안정</span><input type="number" id="고급 안정"></label>
+        <label><span class="고급">고급 침식</span><input type="number" id="고급 침식"></label>
       </div>
     </div>
 
     <div class="grade-block">
       <h3>🔵 희귀 젬 (보유 개수 입력)</h3>
       <div class="gem-group">
-        <label><span class="희귀">희귀 견고</span><input type="number" id="희귀 견고"></label>
-        <label><span class="희귀">희귀 불변</span><input type="number" id="희귀 불변"></label>
+        <label><span class="희귀">희귀 왜곡</span><input type="number" id="희귀 왜곡"></label>
         <label><span class="희귀">희귀 붕괴</span><input type="number" id="희귀 붕괴"></label>
       </div>
     </div>
-
-    <div class="grade-block">
-      <h3>🟣 영웅 젬 (보유 개수 입력)</h3>
-      <div class="gem-group">
-        <label><span class="영웅">영웅 견고</span><input type="number" id="영웅 견고"></label>
-        <label><span class="영웅">영웅 불변</span><input type="number" id="영웅 불변"></label>
-        <label><span class="영웅">영웅 붕괴</span><input type="number" id="영웅 붕괴"></label>
-        <label><span class="영웅">영웅 왜곡</span><input type="number" id="영웅 왜곡"></label>
-      </div>
-    </div>
-  </div>
 
   <div style="margin-top: 20px;">
     <button onclick="calculate()"><strong>최적 합성 계산</strong></button>
@@ -137,16 +127,11 @@
 
   <script>
     const recipes = [
-      ["고급 안정", "고급 안정", "희귀 불변"],
+      ["고급 안정", "고급 안정", "희귀 왜곡"],
       ["고급 안정", "고급 안정", "희귀 붕괴"],
-      ["고급 안정", "고급 안정", "영웅 견고"],
-      ["고급 안정", "고급 안정", "영웅 불변"],
-      ["고급 안정", "고급 안정", "영웅 왜곡"],
-      ["고급 안정", "고급 안정", "영웅 붕괴"],
-      ["고급 안정", "희귀 견고", "희귀 견고"],
-      ["고급 견고", "고급 견고", "고급 불변"],
-      ["고급 견고", "고급 견고", "희귀 붕괴"],
-      ["고급 견고", "고급 불변", "고급 불변"]
+      ["고급 견고", "고급 견고", "고급 견고"],
+      ["고급 불변", "고급 불변", "고급 불변"],
+      ["고급 침식", "고급 침식", "고급 침식"]
     ];
 
     function getGemClass(name) {
@@ -207,5 +192,6 @@
     }
 
 </script> </body> </html>
+
 
 
